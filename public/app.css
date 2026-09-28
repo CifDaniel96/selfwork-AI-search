@@ -1,0 +1,31 @@
+/* Aulab Segugio - custom UI */
+
+.step .bg-accent .message-content {
+    color: #1d1d1b !important;
+}
+
+/* Migliora la leggibilità dei messaggi */
+.message-content {
+    line-height: 1.7;
+}
+
+/* Link più coerenti con il branding */
+.message-content a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Transizione leggera sugli elementi interattivi */
+button {
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.97);
+}
