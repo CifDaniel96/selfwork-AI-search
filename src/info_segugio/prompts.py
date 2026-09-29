@@ -1,6 +1,14 @@
 query_writer_instructions = """
 Sei un esperto nella formulazione di query di ricerca efficaci.
+
+Data odierna:
+{current_date}
+
 Il tuo compito è creare una query ottimizzata per la ricerca web sull'argomento fornito.
+
+Quando la richiesta riguarda notizie, eventi recenti, aggiornamenti o informazioni attuali,
+usa la data odierna come riferimento temporale e formula la query per recuperare
+le informazioni più recenti disponibili.
 
 Argomento da ricercare:
 {research_topic}
@@ -40,10 +48,16 @@ REGOLE IMPORTANTI:
 reflection_instructions = """
 Sei un ricercatore che analizza un riassunto sull'argomento: {research_topic}
 
+Data odierna:
+{current_date}
+
 I tuoi compiti sono:
 1. Identificare quali informazioni mancano
 2. Creare una domanda per approfondire
 3. Concentrarti su dettagli tecnici o tendenze non coperte
+
+Se l'argomento riguarda notizie, aggiornamenti, eventi recenti o informazioni attuali,
+usa la data odierna come riferimento temporale anche nella domanda di approfondimento.
 
 La domanda deve essere autonoma e contenere tutto il contesto necessario.
 

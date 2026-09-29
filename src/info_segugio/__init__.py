@@ -2,6 +2,7 @@ import json
 
 import chainlit as cl
 from openai import OpenAI
+from datetime import date
 
 from info_segugio.config import Config
 from info_segugio.prompts import (
@@ -49,8 +50,11 @@ def llm(
 
 
 def optimize_search_query(research_topic):
+    current_date = date.today().strftime("%d/%m/%Y")
+
     formatted_instructions = query_writer_instructions.format(
-        research_topic=research_topic
+        research_topic=research_topic,
+        current_date=current_date,
     )
 
     result = llm(
@@ -232,8 +236,11 @@ def reflect_on_summary(
     research_topic,
     running_summary,
 ):
+    current_date = date.today().strftime("%d/%m/%Y")
+
     formatted_instructions = reflection_instructions.format(
-        research_topic=research_topic
+        research_topic=research_topic,
+        current_date=current_date,
     )
 
     result = llm(
